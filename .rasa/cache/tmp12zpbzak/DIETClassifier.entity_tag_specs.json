@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-data_hora",
+      "2": "I-data_hora",
+      "3": "L-data_hora",
+      "4": "U-data_hora",
+      "5": "B-especialidade",
+      "6": "I-especialidade",
+      "7": "L-especialidade",
+      "8": "U-especialidade",
+      "9": "B-periodo_consulta",
+      "10": "I-periodo_consulta",
+      "11": "L-periodo_consulta",
+      "12": "U-periodo_consulta",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-data_hora": 1,
+      "I-data_hora": 2,
+      "L-data_hora": 3,
+      "U-data_hora": 4,
+      "B-especialidade": 5,
+      "I-especialidade": 6,
+      "L-especialidade": 7,
+      "U-especialidade": 8,
+      "B-periodo_consulta": 9,
+      "I-periodo_consulta": 10,
+      "L-periodo_consulta": 11,
+      "U-periodo_consulta": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

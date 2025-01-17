@@ -1,0 +1,14 @@
+[
+  {
+    "name": "data_hora",
+    "pattern": "\\d{2}/\\d{2}"
+  },
+  {
+    "name": "data_hora",
+    "pattern": "\\d{2}/\\d{2}/\\d{2,4}"
+  },
+  {
+    "name": "periodo_consulta",
+    "pattern": "(\\bmanhã\\b|\\btarde\\b)"
+  }
+]

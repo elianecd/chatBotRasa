@@ -1,0 +1,29 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "utter_reformular",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"utter_reformular\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"agradecimento\"}}]": "utter_agradecimento",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"agradecimento\"}}, {\"prev_action\": {\"action_name\": \"utter_agradecimento\"}, \"user\": {\"intent\": \"agradecimento\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"utter_agendamento_consulta\"}}, {\"active_loop\": {\"name\": \"agendamento_form\"}, \"prev_action\": {\"action_name\": \"agendamento_form\"}, \"user\": {\"intent\": \"agendamento_consulta\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"agendamento_form\"}}, {\"active_loop\": {\"name\": \"agendamento_form\"}, \"prev_action\": {\"action_name\": \"action_validar_especialidade\"}, \"user\": {\"intent\": \"agendamento_consulta\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"agendamento_form\"}}, {\"active_loop\": {\"name\": \"agendamento_form\"}, \"prev_action\": {\"action_name\": \"action_validar_especialidade\"}, \"slots\": {\"especialidade_medico\": [1.0]}, \"user\": {\"intent\": \"agendamento_consulta\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"agendamento_form\"}, \"prev_action\": {\"action_name\": \"utter_finalizacao\"}, \"slots\": {\"especialidade_medico\": [1.0]}, \"user\": {\"intent\": \"finalizacao\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "handling active loops and forms - agendamento_form - action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"utter_reformular\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"agradecimento\"}}]",
+      "predicting default action with intent restart",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"agradecimento\"}}, {\"prev_action\": {\"action_name\": \"utter_agradecimento\"}, \"user\": {\"intent\": \"agradecimento\"}}]",
+      "predicting default action with intent back",
+      "handling active loops and forms - agendamento_form"
+    ]
+  }
+}

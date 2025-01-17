@@ -1,0 +1,106 @@
+version: "3.1"
+
+nlu:
+- lookup: dia_semana
+  examples: |
+    - segunda
+    - terça
+    - quarta
+    - quinta
+    - sexta
+
+- lookup: periodo_consulta
+  examples: |
+    - manhã
+    - tarde
+
+- regex: data_hora
+  examples: |
+    - \d{2}/\d{2}
+    - \d{2}/\d{2}/\d{2,4}
+
+- intent: saudacao
+  examples: |
+    - oi
+    - oie
+    - olá
+    - bom dia
+    - boa tarde
+    - boa noite
+    - oi, tudo bem?
+    - opa, tudo bem?
+    - olá, como vai?
+
+- intent: agendamento_consulta
+  examples: |
+    - eu gostaria de agendar uma consulta
+    - preciso agendar uma consulta.
+    - estou interessado em agendar uma consulta.
+    - gostaria de marcar um horário para uma consulta
+    - gostaria de agendar uma consulta médica
+    - como posso agendar uma consulta?
+    - quero agendar uma consulta
+    - gostaria de reservar um horário para uma consulta
+    - preciso marcar uma consulta. Como posso proceder?
+
+- intent: agendamento_especialidade
+  examples: |
+    - Gostaria de uma consulta com um [urologista](especialidade)
+    - Preciso agendar um horário com um profissional da área de [cardiologia](especialidade)
+    - Quero reservar um horário para uma consulta com o [dermatologista](especialidade)
+    - Preciso agendar uma consulta com um [endocrino](especialidade)
+    - Quero marcar um horário para uma consulta [nutricionista](especialidade)
+    - Uma consulta com o [ortopedista](especialidade)
+    - Consulta com o [oftalmologista](especialidade)
+    - [gastroenterologista](especialidade)
+    - [otorrinolaringologista](especialidade)
+    - preciso agendar uma consulta com um [oncologista](especialidade)
+
+- intent: agendamento_periodo
+  examples: |
+    - no período da [manhã](periodo_consulta)
+    - no período da tarde
+    - pela manhã
+    - de manhã
+    - à tarde
+    - manhã
+    - tarde
+    - quero à tarde
+    - quero de manhã
+
+- intent: agendamento_data
+  examples: |
+    - Pode ser na próxima [terça](dia_semana)
+    - Na quinta-feira
+    - segunda-feira
+    - quarta-feira,
+    - sexta
+    - No dia [10/05](data_hora)
+    - No dia 27/10
+    - 12/06
+    - 24/02
+
+- intent: agradecimento
+  examples: |
+    - Obrigado
+    - Valeu
+    - Valeu bot, você é demais
+    - Agradeço a ajuda
+    - desde já agradeço
+    - vlw
+    - Muito obrigado pela ajuda
+    - obg
+    - vc é top
+    - grato
+
+- intent: finalizacao
+  examples: |
+    - Não, é só isso.
+    - Não
+    - Só isso mesmo
+    - Somente isso
+    - Não preciso de mais nada
+    - não, era apenas isso.
+    - Não, não preciso de mais nada no momento.
+    - Não, não há mais nada que eu precise.
+    - Não, por enquanto é só isso mesmo.

@@ -1,0 +1,66 @@
+version: '3.1'
+intents:
+- agendamento_consulta
+- agendamento_especialidade
+- agendamento_periodo
+- agendamento_data
+- agradecimento
+- finalizacao
+- saudacao
+actions:
+  - action_validar_especialidade
+entities:
+- dia_semana
+- especialidade
+- periodo_consulta
+- data_hora
+slots:
+  especialidade_medico:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: especialidade
+  periodo_consulta_agenda:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: periodo_consulta
+  data_hora_consulta:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: data_hora
+    - type: from_entity
+      entity: dia_semana
+forms:
+  agendamento_form:
+    required_slots:
+      - especialidade_medico
+      - periodo_consulta_agenda
+      - data_hora_consulta
+responses:
+  utter_saudacao:
+  - text: Olá! Bem-vindo à Clínica Médica do Dr. Bot. Como posso ajudar?
+  utter_agendamento_consulta:
+  - text: Claro! Para isso iremos encaminhar os seus dados para a nossa central de atendimento.
+  utter_ask_agendamento_form_especialidade_medico:
+  - text: Qual especialidade médica você deseja agendar a consulta?
+  utter_ask_agendamento_form_periodo_consulta_agenda:
+  - text: Qual período (manhã/tarde) você prefere para a consulta?
+  utter_ask_agendamento_form_data_hora_consulta:
+  - text: Qual a data você deseja agendar a consulta?
+
+  utter_agradecimento:
+  - text: De nada, ficamos felizes em ajudar!
+  utter_finalizacao:
+  - text: Tenha um ótimo dia! Até a próxima.
+  utter_reformular:
+  - text: Desculpe, não entendi. Poderia reformular a sua frase?
+  utter_default:
+  - text: Desculpe, não entendi. Poderia reformular?
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

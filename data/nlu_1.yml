@@ -1,0 +1,17 @@
+version: "3.1"
+nlu:
+- intent: saudacao
+  examples: |
+    - oie
+- intent: agendamento_consulta
+  examples: |
+    - eu preciso marcar uma consulta
+- intent: agendamento_especialidade
+  examples: |
+    - eu quero agendar com um [cardiologista](especialidade)
+- intent: agendamento_data_hora
+  examples: |
+    - [segunda](dia_semana) de [tarde](periodo_consulta)
+- intent: finalizacao
+  examples: |
+    - nao
